@@ -6,9 +6,6 @@
   <title>Socket.io Test</title>
 </head>
 <body>
-  
-
-
     <div class="chat">
         <div class="chat-title">
           <h1 id="user"></h1>
@@ -27,60 +24,6 @@
       </div>
       <div class="bg"></div>
 
-
-
-
-
-  <!-- <form>
-    <label>
-      Author:
-      <input type="text" id="author" required>
-    </label>
-    <br>
-    <label>
-      Content:
-      <textarea id="content" required></textarea>
-    </label>
-    <br>
-    <button type="submit">Send</button>
-  </form>
-  <ul id="messages"></ul>
-
-  <script src="/socket.io/socket.io.js"></script>
-  <script>
-    const socket = io();
-
-   
-    // Handle form submission
-    const form = document.querySelector('form');
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      
-      const authorInput = document.getElementById('author');
-      const contentInput = document.getElementById('content');
-
-      const message = {
-        username: authorInput.value,
-        message: contentInput.value,
-      };
-
-      // Send new message to server
-      socket.emit('new-message', message);
-
-      // Clear input fields
-      authorInput.value = '';
-      contentInput.value = '';
-    });
-     // Listen for new messages
-     socket.on('new-message', (data) => {
-        console.log(data)
-      const messages = document.getElementById('messages');
-      const item = document.createElement('li');
-      item.textContent = `${data.username}: ${data.message}`;
-      messages.appendChild(item);
-    });
-
-  </script> -->
 </body>
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

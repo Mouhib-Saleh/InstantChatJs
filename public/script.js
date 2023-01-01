@@ -57,27 +57,6 @@ $(window).on('keydown', function(e) {
   }
 })
 
-var Fake = [
-  'Hi there, I\'m Fabio and you?',
-  'Nice to meet you',
-  'How are you?',
-  'Not too bad, thanks',
-  'What do you do?',
-  'That\'s awesome',
-  'Codepen is a nice place to stay',
-  'I think you\'re a nice person',
-  'Why do you think that?',
-  'Can you explain?',
-  'Anyway I\'ve gotta go now',
-  'It was a pleasure chat with you',
-  'Time to make a new codepen',
-  'Bye',
-  ':)'
-]
-
-
- 
-
   socket.on('new-message', (data) => {
   if(data.username==name){return false}
 
@@ -90,11 +69,6 @@ var Fake = [
         updateScrollbar();
         i++;
       }, 1000 + (Math.random() * 0) * 0);
-
- /*  const messages = document.getElementById('messages');
-  const item = document.createElement('li');
-  item.textContent = `${data.username}: ${data.message}`;
-  messages.appendChild(item); */
 });
 
 
