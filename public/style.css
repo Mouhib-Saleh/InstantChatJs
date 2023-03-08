@@ -113,6 +113,12 @@ body {
     font-size: 9px;
     color: rgba(255, 255, 255, .3);
 }
+.messages .message .user {
+    position: absolute;
+    top: -15px;
+    font-size: 9px;
+    color: rgba(255, 255, 255, .3);
+}
 .messages .message::before {
     content: '';
     position: absolute;
@@ -266,6 +272,7 @@ body {
     opacity: 0;
 }
 .mCSB_inside > .mCSB_container {
+    margin-top: 5px;
     margin-right: 0px;
     padding: 0 10px;
 }

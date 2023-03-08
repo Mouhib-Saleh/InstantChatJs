@@ -6,10 +6,15 @@ var $messages = $('.messages-content'),
     var user = document.getElementById("user");
       user.innerHTML = "Hello, " + name + "!";
     const socket = io();
+    var randomNumber = Math.floor(Math.random() * 100) + 1;
+    var image = "https://picsum.photos/200/300?"+randomNumber
+
 $(window).load(function() {
   $messages.mCustomScrollbar();
  
 });
+var myImage = document.querySelector("#avatarU");
+myImage.src = "https://st2.depositphotos.com/3867453/6986/v/600/depositphotos_69864645-stock-illustration-letter-m-logo-icon-design.jpg";
 
 function updateScrollbar() {
   $messages.mCustomScrollbar("update").mCustomScrollbar('scrollTo', 'bottom', {
@@ -26,11 +31,14 @@ function setDate(){
   }
 }
 
+
 function insertMessage() {
+  console.log(image)
     msg = $('.message-input').val();
     const message = {
         username: name,
         message: msg,
+        image:image,
       };
  
   
@@ -59,13 +67,14 @@ $(window).on('keydown', function(e) {
 
   socket.on('new-message', (data) => {
   if(data.username==name){return false}
-
-    $('<div class="message loading new"><figure class="avatar"><img src="https://res.cloudinary.com/dnnhnqiym/image/upload/v1649708204/samples/people/boy-snow-hoodie.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+  
+    $('<div class="message loading new"><figure class="avatar"><img src='+data.image+' /></figure><span></span></div>').appendTo($('.mCSB_container'));
     updateScrollbar();
     setTimeout(function() {
         $('.message.loading').remove();
-        $('<div class="message new"><figure class="avatar"><img src="https://res.cloudinary.com/dnnhnqiym/image/upload/v1649708204/samples/people/boy-snow-hoodie.jpg" /></figure>' + data.message + '</div>').appendTo($('.mCSB_container')).addClass('new');
+        $('<div class="message new"><figure class="avatar"><img src='+data.image+' /></figure><div class="user">' +data.username+ '</div>' + data.message + '</div>').appendTo($('.mCSB_container')).addClass('new');
         setDate();
+       
         updateScrollbar();
         i++;
       }, 1000 + (Math.random() * 0) * 0);
