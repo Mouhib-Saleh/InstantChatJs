@@ -1,0 +1,21 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "a socket io chat with node",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "dev": "nodemon index.js" ,
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mouhib Saleh",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.1",
+    "nodemon": "^2.0.21",
+    "socket.io": "^4.6.1"
+  }
+}
