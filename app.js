@@ -23,7 +23,13 @@ mongoose.connect(process.env.DB_CONNECTION)
 
 // Initialize socket.io
 const server = require('http').createServer(app);
-const io = socketio(server);
+
+const io = require('socket.io')(server, {
+  cors: {
+    origin: '*',
+    methods: ['GET', 'POST']
+  }
+});
 
 // Listen for new connections
 io.on('connection', (socket) => {
